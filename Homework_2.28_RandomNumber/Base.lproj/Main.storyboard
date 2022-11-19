@@ -11,7 +11,7 @@
         <!--Random number-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Homework_2_28_RandomNumber" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Homework_2_28_RandomNumber" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -52,17 +52,28 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Generate"/>
+                                <connections>
+                                    <action selector="generateButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="Izy-yw-VNe"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lsy-dn-FtM">
+                                <rect key="frame" x="156" y="257" width="63" height="153"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="128"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="OHS-pO-OV6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="96N-MT-ZcM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="udz-Ty-RPR" secondAttribute="trailing" constant="16" id="BB7-Uo-fZC"/>
+                            <constraint firstItem="Lsy-dn-FtM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="FrA-kP-ZFM"/>
                             <constraint firstItem="udz-Ty-RPR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="PoT-E9-k7u"/>
                             <constraint firstItem="udz-Ty-RPR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="64" id="TFa-YC-bWM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="OHS-pO-OV6" secondAttribute="bottom" constant="20" id="V30-6Y-JgE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OHS-pO-OV6" secondAttribute="trailing" constant="16" id="XiB-kE-VYd"/>
+                            <constraint firstItem="Lsy-dn-FtM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="o3o-TS-RIJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Random number" id="rsQ-u3-ioY">
@@ -73,15 +84,21 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="generateButton" destination="OHS-pO-OV6" id="IZM-Ak-be3"/>
+                        <outlet property="maximumLabel" destination="6KM-Ka-ya0" id="NBl-l6-Vzc"/>
+                        <outlet property="minimumLabel" destination="ow5-uf-dg2" id="ryO-C5-GqH"/>
+                        <outlet property="resultLabel" destination="Lsy-dn-FtM" id="nsw-yP-dBy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1076" y="3.1484257871064472"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="ODo-wu-Ir8">
             <objects>
-                <viewController id="1aa-nR-FXX" sceneMemberID="viewController">
+                <viewController id="1aa-nR-FXX" customClass="SettingsViewController" customModule="Homework_2_28_RandomNumber" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pP7-c4-M6s">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -93,6 +110,9 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButtonPressed" destination="1aa-nR-FXX" eventType="touchUpInside" id="ioI-XR-aYJ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t9n-df-l6K">
                                 <rect key="frame" x="16" y="535" width="343" height="46"/>
@@ -101,6 +121,9 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Done"/>
+                                <connections>
+                                    <segue destination="LYW-EM-WSL" kind="unwind" unwindAction="unwindSegueFor:" id="xX4-qe-5v2"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="YKI-v3-JTP">
                                 <rect key="frame" x="87.5" y="64" width="200" height="97"/>
@@ -157,8 +180,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="PJO-59-WX3"/>
+                    <connections>
+                        <outlet property="cancelButton" destination="0P3-IY-SqE" id="4YS-H1-JAk"/>
+                        <outlet property="doneButton" destination="t9n-df-l6K" id="AoK-u0-uTg"/>
+                        <outlet property="maximumTextField" destination="U0S-wP-S8v" id="WKw-jb-8Al"/>
+                        <outlet property="minimumTextField" destination="biu-X1-4zP" id="RbT-2k-nPl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cz1-Sb-8zn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="LYW-EM-WSL" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1791.6279069767443" y="2.5751072961373391"/>
         </scene>
