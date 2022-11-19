@@ -28,6 +28,9 @@ class SettingsViewController: UIViewController {
         cancelButton.layer.cornerRadius = 12
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {                       self.view.endEditing(true)
+    }
+    
     @IBAction func cancelButtonPressed() {
         dismiss(animated: true)
     }
